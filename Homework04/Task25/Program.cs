@@ -3,15 +3,15 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-int Promt ()
+int Promt (string message)
 {
-  Console.WriteLine("Введите число: ");
+  Console.WriteLine(message);
   int number = Convert.ToInt32(Console.ReadLine());
   return number;
 }
 
-int numberA = Promt();
-int numberB = Promt();
+int numberA = Promt("Введите число А");
+int numberB = Promt("Введите число В");
 
 int Power (int numberA, int numberB)
 {
@@ -23,4 +23,4 @@ int Power (int numberA, int numberB)
   return result;
 }
 
-Console.WriteLine(Power(numberA, numberB));
+Console.WriteLine($"{numberA} в степени {numberB} равно {Power(numberA, numberB)}");
