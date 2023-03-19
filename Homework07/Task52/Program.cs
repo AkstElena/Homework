@@ -5,15 +5,13 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int Promt(string message)
+int[,] CreateAndPrintArray()
 {
-  Console.WriteLine(message);
-  int number = Convert.ToInt32(Console.ReadLine());
-  return number;
-}
-
-int[,] CreateAndPrintArray(int m, int n)
-{
+  int m = new Random().Next(2, 10);
+  int n = new Random().Next(2, 10);
+  Console.WriteLine($"Количество строк: {m}");
+  Console.WriteLine($"Количество столбцов: {n}");
+  Console.WriteLine();
   int[,] matrix = new int[m, n];
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
@@ -51,10 +49,7 @@ double[] AverageOfColumns(int[,] matrix)
   return arrayAverageOfColumns;
 }
 
-int rows = Promt("Введите количество строк двумерного массива: ");
-int columns = Promt("Введите количество столбцов двумерного массива: ");
-Console.WriteLine();
-int[,] matrix = CreateAndPrintArray(rows, columns);
+int[,] matrix = CreateAndPrintArray();
 Console.WriteLine();
 Console.WriteLine($"Среднее арифметическое каждого столбца: {String.Join("; ", AverageOfColumns(matrix))}.");
 
