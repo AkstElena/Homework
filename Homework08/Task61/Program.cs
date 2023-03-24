@@ -23,10 +23,12 @@ void PrintArray (int [][] array)
 {
   for (int i = 0; i < array.Length; i++)
   {
-    Console.SetCursorPosition((Console.WindowWidth-i*6) / 2, i);
+    Console.SetCursorPosition((Console.WindowWidth) / 2 -array[i].Length, i);
     for (int j = 0; j < array[i].Length; j++)
     {
-      Console.Write(array[i][j]+"\t");
+      if (array[i][j] < 10)
+      Console.Write(array[i][j] + "  ");
+      else Console.Write(array[i][j] + " ");
     }
     Console.WriteLine();
   }
